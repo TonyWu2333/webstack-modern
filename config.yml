@@ -148,67 +148,73 @@ nav:
             logo: https://ctf.bugku.com/favicon.ico
   - name: 人工智能
     icon: fa-magic
-    links:
-      - title: chatgpt
-        url: https://chat.openai.com/
-        logo: https://cdn.oaistatic.com/_next/static/media/favicon-32x32.be48395e.png
-        desc: openai的大语言模型
-      - title: gemini
-        url: https://gemini.google.com/app
-        logo: https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png
-        desc: google的大语言模型
-      - title: poe
-        url: https://poe.com/
-        logo: https://psc2.cf2.poecdn.net/assets/favicon.svg
-        desc: 集合全球各大模型
-      - title: 通义千问
-        url: https://www.qianwen.com/
-        logo: https://img.alicdn.com/imgextra/i4/O1CN01FOwagl1XBpyVA2QVy_!!6000000002886-2-tps-512-512.png
-        desc: 阿里的大语言模型
-      - title: 文心一言
-        url: https://yiyan.baidu.com/
-        logo: https://nlp-eb.cdn.bcebos.com/logo/favicon.ico
-        desc: 百度的大语言模型
-      - title: suno
-        url: https://suno.com/
-        logo: https://suno.com/favicon.ico
-        desc: 音乐合成模型
-      - title: hugging face
-        url: https://huggingface.co/
-        logo: https://huggingface.co/favicon.ico
-        desc: 著名开源AI模型与数据集网站
-      - title: kaggle
-        url: https://www.kaggle.com/
-        logo: https://www.kaggle.com/static/images/favicon.ico
-        desc: AI模型与数据集网站
-      - title: ultimate vocal
-        url: https://ultimatevocalremover.com/
-        logo: https://img1.wsimg.com/isteam/ip/27b42b0b-4e5c-4246-8229-db96bd3bf24e/GUI-Icon.png/:/rs=w:57,h:57,m
-        desc: 人声分离AI模型
-      - title: kimi AI
-        url: https://kimi.moonshot.cn/
-        logo: https://statics.moonshot.cn/kimi-chat/favicon.ico
-        desc: AI搜索网站
-      - title: 秘塔AI
-        url: https://metaso.cn/
-        logo: https://metaso.cn/favicon.ico
-        desc: AI搜索网站
-      - title: unsloth
-        url: https://unsloth.ai/
-        logo: https://unsloth.ai/cgi/image/unsloth_logo_no_shadow_KgfOV6keeBZnffQsKUny3.png?width=96&quality=80&format=auto
-        desc: 大模型微调框架
-      - title: monica
-        url: https://monica.im/
-        logo: https://monica.im/logo.png
-        desc: AI浏览器插件很好用
-      - title: ollama
-        url: https://ollama.com/
-        logo: https://ollama.com/public/icon-64x64.png
-        desc: 本地部署AI模型
-      - title: ComfyUI
-        url: https://www.comfy.org/
-        logo: https://framerusercontent.com/images/7Nhoxwn9eWYrqKjEewfXutR90U.png
-        desc: AI绘画工作流UI
+    children:
+      - name: 对话助手
+        links:
+          - title: chatgpt
+            url: https://chat.openai.com/
+            logo: https://cdn.oaistatic.com/_next/static/media/favicon-32x32.be48395e.png
+            desc: openai的大语言模型
+          - title: gemini
+            url: https://gemini.google.com/app
+            logo: https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png
+            desc: google的大语言模型
+          - title: 通义千问
+            url: https://www.qianwen.com/
+            logo: https://img.alicdn.com/imgextra/i4/O1CN01FOwagl1XBpyVA2QVy_!!6000000002886-2-tps-512-512.png
+            desc: 阿里的大语言模型
+          - title: 文心一言
+            url: https://yiyan.baidu.com/
+            logo: https://nlp-eb.cdn.bcebos.com/logo/favicon.ico
+            desc: 百度的大语言模型
+          - title: kimi AI
+            url: https://kimi.moonshot.cn/
+            logo: https://statics.moonshot.cn/kimi-chat/favicon.ico
+            desc: AI搜索网站
+          - title: 秘塔AI
+            url: https://metaso.cn/
+            logo: https://metaso.cn/favicon.ico
+            desc: AI搜索网站
+          - title: poe
+            url: https://poe.com/
+            logo: https://psc2.cf2.poecdn.net/assets/favicon.svg
+            desc: 集合全球各大模型
+          - title: monica
+            url: https://monica.im/
+            logo: https://monica.im/logo.png
+            desc: AI浏览器插件很好用
+      - name: 创作工具
+        links:
+          - title: suno
+            url: https://suno.com/
+            logo: https://suno.com/favicon.ico
+            desc: 音乐合成模型
+          - title: ComfyUI
+            url: https://www.comfy.org/
+            logo: https://framerusercontent.com/images/7Nhoxwn9eWYrqKjEewfXutR90U.png
+            desc: AI绘画工作流UI
+          - title: ultimate vocal
+            url: https://ultimatevocalremover.com/
+            logo: https://img1.wsimg.com/isteam/ip/27b42b0b-4e5c-4246-8229-db96bd3bf24e/GUI-Icon.png/:/rs=w:57,h:57,m
+            desc: 人声分离AI模型
+      - name: 模型与开发
+        links:
+          - title: hugging face
+            url: https://huggingface.co/
+            logo: https://huggingface.co/favicon.ico
+            desc: 著名开源AI模型与数据集网站
+          - title: kaggle
+            url: https://www.kaggle.com/
+            logo: https://www.kaggle.com/static/images/favicon.ico
+            desc: AI模型与数据集网站
+          - title: ollama
+            url: https://ollama.com/
+            logo: https://ollama.com/public/icon-64x64.png
+            desc: 本地部署AI模型
+          - title: unsloth
+            url: https://unsloth.ai/
+            logo: https://unsloth.ai/cgi/image/unsloth_logo_no_shadow_KgfOV6keeBZnffQsKUny3.png?width=96&quality=80&format=auto
+            desc: 大模型微调框架
   - name: 产品
     icon: fa-lightbulb-o
     children:
