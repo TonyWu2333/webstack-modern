@@ -56,7 +56,7 @@ const card = (l) => `                <div class="col-sm-3">
                     <div class="xe-widget xe-conversations box2 label-info" onclick="window.open(${esc(JSON.stringify(l.url))}, '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${esc(l.url)}">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="${esc(logoSrc(l.logo))}" class="lozad img-circle" width="40">
+                                <img data-src="${esc(logoSrc(l.logo))}" class="lozad img-circle" width="40" alt="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='assets/images/logos/default.png'">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">

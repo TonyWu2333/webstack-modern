@@ -1,6 +1,6 @@
 # WebStack Modern
 
-**A beautified, modernized version of [WebStack](https://github.com/WebStackPage/WebStackPage.github.io)** — the popular static link-navigation page (webstack.cc). It keeps WebStack's layout and link collection, and adds a refreshed visual style, smooth motion, dark mode, and a config-file workflow.
+**A beautified, modernized version of [WebStack](https://github.com/WebStackPage/WebStackPage.github.io)** — the popular static link-navigation page (webstack.cc). It keeps WebStack's layout and adds a refreshed visual style, smooth motion, search, dark mode, and a config-file workflow. The link collection is my own (migrated from [TonyWu2333/navigate](https://github.com/TonyWu2333/navigate)).
 
 ## What's different from the original WebStack
 
@@ -38,7 +38,7 @@ nav:
         links: [...]
 ```
 
-- `title` and `url` are required; `desc` and `logo` are optional (missing logo falls back to `default.png`).
+- `title` and `url` are required; `desc` and `logo` are optional (a missing or broken logo falls back to `default.png`).
 - To add a logo, drop the image into `assets/images/logos/` and reference its filename.
 - Sidebar icons: see class names in `assets/css/fonts/linecons/css/linecons.css`.
 - Site title, name/logo, footer and extra `<head>` HTML (e.g. your own analytics) are under `site:`.
