@@ -465,20 +465,6 @@ body,
     transition: opacity .3s ease;
 }
 
-/* external-link arrow */
-.xe-widget.box2:after {
-    content: "\f061";
-    font-family: FontAwesome;
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    font-size: 11px;
-    color: var(--accent);
-    opacity: 0;
-    transform: translate(-6px, 6px) rotate(-45deg);
-    transition: opacity .3s ease, transform .35s var(--ease);
-}
-
 .xe-widget.box2:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
@@ -487,11 +473,6 @@ body,
 
 .xe-widget.box2:hover:before {
     opacity: 1;
-}
-
-.xe-widget.box2:hover:after {
-    opacity: 1;
-    transform: translate(0, 0) rotate(-45deg);
 }
 
 .xe-widget.box2:active {

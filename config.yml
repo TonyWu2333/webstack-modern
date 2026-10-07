@@ -2,9 +2,9 @@
 #  站点设置
 # ============================================================
 site:
-  title: 我的网址导航
-  name: 我的导航            # 侧栏显示的站点名（不设置 logo 时使用文字 Logo）
-  mark: 导                  # 文字 Logo 方块里的字，不填取 name 第一个字
+  title: Tony的导航站
+  name: Tony的导航站        # 侧栏显示的站点名（不设置 logo 时使用文字 Logo）
+  mark: T                   # 文字 Logo 方块里的字，不填取 name 第一个字
   description: 个人常用网站收藏
   keywords: 网址导航,设计导航,工具导航
   # 以下图片路径相对于仓库根目录，也可以填完整的 https:// 地址
@@ -19,7 +19,7 @@ site:
       url: https://github.com/TonyWu2333/webstack-modern
   # 页脚，支持 HTML
   footer: >-
-    &copy; 2026 我的网址导航 · 主题基于
+    &copy; 2026 Tony的导航站 · 主题基于
     <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank"><strong>WebStack</strong></a> 美化
   # 插入到 <head> 里的额外 HTML（比如你自己的统计代码），不需要就留空
   head: ""
