@@ -155,10 +155,22 @@ nav:
             url: https://chat.openai.com/
             logo: https://cdn.oaistatic.com/_next/static/media/favicon-32x32.be48395e.png
             desc: openai的大语言模型
+          - title: Claude
+            url: https://claude.ai/
+            logo: claude.png
+            desc: Anthropic的大语言模型
           - title: gemini
             url: https://gemini.google.com/app
             logo: https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png
             desc: google的大语言模型
+          - title: Grok
+            url: https://grok.com/
+            logo: grok.png
+            desc: xAI的大语言模型
+          - title: DeepSeek
+            url: https://chat.deepseek.com/
+            logo: deepseek.png
+            desc: 深度求索的大语言模型
           - title: 通义千问
             url: https://www.qianwen.com/
             logo: https://img.alicdn.com/imgextra/i4/O1CN01FOwagl1XBpyVA2QVy_!!6000000002886-2-tps-512-512.png
@@ -171,6 +183,10 @@ nav:
             url: https://kimi.moonshot.cn/
             logo: https://statics.moonshot.cn/kimi-chat/favicon.ico
             desc: AI搜索网站
+          - title: 智谱清言
+            url: https://chatglm.cn/
+            logo: chatglm.png
+            desc: 智谱的GLM大语言模型
           - title: 秘塔AI
             url: https://metaso.cn/
             logo: https://metaso.cn/favicon.ico
@@ -179,10 +195,6 @@ nav:
             url: https://poe.com/
             logo: https://psc2.cf2.poecdn.net/assets/favicon.svg
             desc: 集合全球各大模型
-          - title: monica
-            url: https://monica.im/
-            logo: https://monica.im/logo.png
-            desc: AI浏览器插件很好用
       - name: 创作工具
         links:
           - title: suno
