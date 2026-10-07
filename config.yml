@@ -43,7 +43,7 @@ nav:
         desc: 本人博客
       - title: Tony Wu
         url: https://me.tonywu.top/
-        logo: https://tonywu.top/favicon.ico
+        logo: me-tonywu.svg
         desc: 个人主页
   - name: 计算机技术
     icon: fa-code
