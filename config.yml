@@ -162,6 +162,10 @@ nav:
             url: https://www.ycombinator.com/
             logo: ycombinator.ico
             desc: 硅谷知名创业孵化器，可查YC公司库与创业课程
+          - title: Product Hunt
+            url: https://www.producthunt.com/
+            logo: producthunt.png
+            desc: 每日发现全球新产品
   - name: 人工智能
     icon: fa-magic
     children:
@@ -298,10 +302,6 @@ nav:
             url: https://www.woshipm.com/
             logo: woshipm.ico
             desc: 产品经理学习交流社区
-          - title: Product Hunt
-            url: https://www.producthunt.com/
-            logo: producthunt.png
-            desc: 每日发现全球新产品
           - title: 少数派
             url: https://sspai.com/
             logo: sspai.ico
