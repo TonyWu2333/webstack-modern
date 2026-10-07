@@ -67,13 +67,27 @@ const card = (l) => `                <div class="col-sm-3">
                     </div>
                 </div>`;
 
-const section = (c) => `            <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="${c.id}"></i>${esc(c.name)}</h4>
+const section = (c, icon) => `            <h4 class="text-gray"><i class="${esc(icon || 'linecons-tag')}" id="${c.id}"></i>${esc(c.name)}<span class="cat-count">${(c.links || []).length}</span></h4>
             <div class="row">
 ${(c.links || []).map(card).join('\n')}
-            </div>
-            <br />`;
+            </div>`;
 
-const sections = nav.flatMap((item) => (item.children || [item])).map(section).join('\n');
+// child categories reuse their parent's icon
+const sections = nav.flatMap((item) => (item.children || [item]).map((c) => section(c, item.icon))).join('\n');
+
+// sidebar brand: image logo if configured, otherwise a text logo from site.name
+const name = site.name || site.title;
+const brand = site.logo
+  ? `                        <a href="./" class="logo-expanded">
+                            <img src="${esc(asset(site.logo))}" width="100%" alt="" />
+                        </a>
+                        <a href="./" class="logo-collapsed">
+                            <img src="${esc(asset(site.logo_collapsed || site.logo))}" width="40" alt="" />
+                        </a>`
+  : `                        <a href="./" class="brand">
+                            <span class="brand-mark">${esc(site.mark || [...name][0])}</span>
+                            <span class="brand-name">${esc(name)}</span>
+                        </a>`;
 
 const topLinks = (site.top_links || []).map((l) => `                    <li class="hidden-sm hidden-xs">
                         <a href="${esc(l.url)}" target="_blank">
@@ -86,8 +100,7 @@ const vars = {
   keywords: esc(site.keywords),
   description: esc(site.description),
   favicon: esc(asset(site.favicon || 'assets/images/favicon.png')),
-  logo: esc(asset(site.logo || 'assets/images/logo@2x.png')),
-  logo_collapsed: esc(asset(site.logo_collapsed || 'assets/images/logo-collapsed@2x.png')),
+  brand,
   head: site.head || '', // raw HTML, e.g. your own analytics snippet
   footer: site.footer || '', // raw HTML
   top_links: topLinks,

@@ -9,7 +9,6 @@
     <meta name="keywords" content="{{keywords}}">
     <meta name="description" content="{{description}}">
     <link rel="shortcut icon" href="{{favicon}}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
     <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
     <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -17,6 +16,12 @@
     <link rel="stylesheet" href="assets/css/xenon-components.css">
     <link rel="stylesheet" href="assets/css/xenon-skins.css">
     <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/modern.css">
+    <meta name="theme-color" content="#0b1020">
+    <script>
+    document.documentElement.classList.add('js');
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+    </script>
     <script src="assets/js/jquery-1.11.1.min.js"></script>
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{title}}">
@@ -30,14 +35,12 @@
             <div class="sidebar-menu-inner">
                 <header class="logo-env">
                     <div class="logo">
-                        <a href="./" class="logo-expanded">
-                            <img src="{{logo}}" width="100%" alt="" />
-                        </a>
-                        <a href="./" class="logo-collapsed">
-                            <img src="{{logo_collapsed}}" width="40" alt="" />
-                        </a>
+{{brand}}
                     </div>
                     <div class="mobile-menu-toggle visible-xs">
+                        <a href="#" class="theme-toggle" data-theme-toggle title="切换明暗">
+                            <i class="fa-sun-o icon-light"></i><i class="fa-moon-o icon-dark"></i>
+                        </a>
                         <a href="#" data-toggle="mobile-menu">
                             <i class="fa-bars"></i>
                         </a>
@@ -58,6 +61,11 @@
                     </li>
                 </ul>
                 <ul class="user-info-menu right-links list-inline list-unstyled">
+                    <li>
+                        <a href="#" class="theme-toggle" data-theme-toggle title="切换明暗">
+                            <i class="fa-sun-o icon-light"></i><i class="fa-moon-o icon-dark"></i>
+                        </a>
+                    </li>
 {{top_links}}
                 </ul>
             </nav>
@@ -118,7 +126,7 @@
             public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
             ps_destroy();
             $("html, body").animate({
-                scrollTop: $(document.getElementById($(this).attr("href").slice(1))).offset().top - 30
+                scrollTop: $(document.getElementById($(this).attr("href").slice(1))).offset().top - 70
             }, {
                 duration: 500,
                 easing: "swing"
@@ -144,6 +152,7 @@
     <script src="assets/js/xenon-toggles.js"></script>
     <script src="assets/js/xenon-custom.js"></script>
     <script src="assets/js/lozad.js"></script>
+    <script src="assets/js/modern.js"></script>
 </body>
 
 </html>

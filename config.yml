@@ -3,12 +3,15 @@
 # ============================================================
 site:
   title: 我的网址导航
+  name: 我的导航            # 侧栏显示的站点名（不设置 logo 时使用文字 Logo）
+  mark: 导                  # 文字 Logo 方块里的字，不填取 name 第一个字
   description: 个人常用网站收藏
   keywords: 网址导航,设计导航,工具导航
   # 以下图片路径相对于仓库根目录，也可以填完整的 https:// 地址
   favicon: assets/images/favicon.png
-  logo: assets/images/logo@2x.png                  # 侧栏展开时的 Logo
-  logo_collapsed: assets/images/logo-collapsed@2x.png  # 侧栏收起时的 Logo
+  # 想用图片 Logo 时取消下面两行注释（原版 WebStack 图片 Logo 仍在 assets/images 里）
+  # logo: assets/images/logo@2x.png                  # 侧栏展开时的 Logo
+  # logo_collapsed: assets/images/logo-collapsed@2x.png  # 侧栏收起时的 Logo
   # 顶部右侧链接，可删除或增加
   top_links:
     - name: GitHub
