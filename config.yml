@@ -42,6 +42,10 @@ nav:
         url: https://tonywu.top
         logo: https://tonywu.top/favicon.ico
         desc: 本人博客
+      - title: Tony Wu
+        url: https://me.tonywu.top/
+        logo: https://tonywu.top/favicon.ico
+        desc: 个人主页
   - name: 计算机技术
     icon: fa-code
     children:
@@ -137,14 +141,15 @@ nav:
             url: https://codeforces.com/
             logo: https://th.bing.com/th?id=ODLS.8f171669-3b82-466f-8b9e-4a510209e500&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2
             desc: 俄罗斯算法比赛平台
+          - title: LeetCode
+            url: https://leetcode.cn/
+            logo: leetcode.ico
+            desc: 力扣，算法刷题平台
       - name: 网安
         links:
           - title: bugku
             url: https://ctf.bugku.com/
             logo: https://ctf.bugku.com/favicon.ico
-          - title: BUUCTF
-            url: https://buuoj.cn/
-            logo: https://buuoj.cn/themes/buu_core/static/img/favicon.ico
       - name: 人工智能
         links:
           - title: chatgpt
@@ -207,8 +212,8 @@ nav:
             url: https://www.comfy.org/
             logo: https://framerusercontent.com/images/7Nhoxwn9eWYrqKjEewfXutR90U.png
             desc: AI绘画工作流UI
-  - name: 插画
-    icon: fa-picture-o
+  - name: 设计
+    icon: fa-paint-brush
     links:
       - title: unDraw
         url: https://undraw.co/illustrations
@@ -220,38 +225,34 @@ nav:
         desc: 可选择画风的插画网站
   - name: 动漫
     icon: fa-smile-o
-    children:
-      - name: 在线动漫观看
-        links:
-          - title: 次元动漫城
-            url: https://www.cycity.pro/
-            logo: cycity.png
-          - title: 樱舞动漫
-            url: https://www.maigo.cc/
-            logo: maigo.jpg
-      - name: 动漫资源下载
-        links:
-          - title: 萌番组
-            url: https://bangumi.moe/
-            logo: bangumi-moe.png
-            desc: 动漫BT资源
-          - title: 萌番组Lite
-            url: https://bangumi.moe/lite/
-            logo: bangumi-moe.png
-            desc: 萌番组Lite版
-          - title: 动漫花园
-            url: https://www.dmhy.org/
-            logo: https://www.dmhy.org/favicon.ico
-          - title: 动漫花园镜像网站
-            url: https://garden.onekuma.cn/
-            logo: https://garden.onekuma.cn/favicon.svg
-          - title: SUBPLEASE
-            url: https://subsplease.org/
-            logo: https://subsplease.org/favicon.ico
-            desc: 全英文日漫资源
-          - title: 诸神字幕组
-            url: https://subs.kamigami.org/
-            logo: https://subs.kamigami.org/wp-content/themes/a-supercms-3.9-pro/favicon.ico
+    links:
+      - title: 次元动漫城
+        url: https://www.cycity.pro/
+        logo: cycity.png
+      - title: 樱舞动漫
+        url: https://www.maigo.cc/
+        logo: maigo.jpg
+      - title: 萌番组
+        url: https://bangumi.moe/
+        logo: bangumi-moe.png
+        desc: 动漫BT资源
+      - title: 萌番组Lite
+        url: https://bangumi.moe/lite/
+        logo: bangumi-moe.png
+        desc: 萌番组Lite版
+      - title: 动漫花园
+        url: https://www.dmhy.org/
+        logo: https://www.dmhy.org/favicon.ico
+      - title: 动漫花园镜像网站
+        url: https://garden.onekuma.cn/
+        logo: https://garden.onekuma.cn/favicon.svg
+      - title: SUBPLEASE
+        url: https://subsplease.org/
+        logo: https://subsplease.org/favicon.ico
+        desc: 全英文日漫资源
+      - title: 诸神字幕组
+        url: https://subs.kamigami.org/
+        logo: https://subs.kamigami.org/wp-content/themes/a-supercms-3.9-pro/favicon.ico
   - name: 工具
     icon: fa-wrench
     links:
