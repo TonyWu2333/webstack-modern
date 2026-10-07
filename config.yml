@@ -77,10 +77,6 @@ nav:
             url: https://www.tailwindcss.cn/docs/installation
             logo: https://www.tailwindcss.cn/favicons/apple-touch-icon.png?v=3
             desc: 优美的css框架
-          - title: bulma
-            url: https://bulma.io/
-            logo: https://bulma.io/favicons/apple-touch-icon.png?v=201701041855
-            desc: 现代化CSS框架
           - title: artplayer
             url: https://artplayer.org/
             logo: https://artplayer.org/assets/img/favicon.ico
@@ -97,18 +93,10 @@ nav:
             url: https://www.diffchecker.com/
             logo: https://www.diffchecker.com/favicon.ico
             desc: 文本对比工具
-          - title: wow.js
-            url: https://wowjs.uk/
-            logo: https://wowjs.uk/favicon.ico
-            desc: 一个在网页滚动时显示动画的JavaScript插件
           - title: Animate.css
             url: https://animate.style/
             logo: https://animate.style/img/favicon.ico
             desc: 一个随时可用的CSS动画库
-          - title: uiverse
-            url: https://uiverse.io/
-            logo: https://uiverse.io/favicon-16x16.png
-            desc: 开源前端elements
           - title: vercel
             url: https://vercel.com/
             logo: https://vercel.com/favicon.ico
@@ -285,13 +273,6 @@ nav:
           - title: 诸神字幕组
             url: https://subs.kamigami.org/
             logo: https://subs.kamigami.org/wp-content/themes/a-supercms-3.9-pro/favicon.ico
-  - name: 影视
-    icon: fa-video-camera
-    links:
-      - title: vidhub
-        url: https://vidhub1.cc/
-        logo: https://s2.loli.net/2024/10/12/rTyIS1gNzYjJ9oM.png
-        desc: 在线影视网站
   - name: 工具
     icon: fa-wrench
     links:
@@ -315,13 +296,6 @@ nav:
         url: https://pdfcandy.com/cn/
         logo: pdfcandy.ico
         desc: PDF在线编辑
-  - name: 学习
-    icon: fa-graduation-cap
-    links:
-      - title: 学习通
-        url: https://zjut.fanya.chaoxing.com/portal
-        logo: https://android-artworks.25pp.com/fs08/2021/07/19/1/106_81ef6e834ce4919f3aa78e2e7976c4b7_con_130x130.png
-        desc: 大学生常用学习平台
   - name: 软件资源
     icon: fa-download
     links:
@@ -371,23 +345,7 @@ nav:
             url: https://www.mcmod.cn/
             logo: https://www.mcmod.cn/static/public/images/favicon.ico
             desc: 模组信息查询
-          - title: curseforge
-            url: https://www.curseforge.com/
-            logo: https://static-beta.curseforge.com/images/favicon.ico
-            desc: mods网站
           - title: modrinth
             url: https://modrinth.com/
             logo: https://modrinth.com/favicon-light.ico
             desc: The place for Minecraft
-  - name: MMD
-    icon: fa-child
-    links:
-      - title: 模之屋
-        url: https://www.aplaybox.com/
-        logo: https://www.aplaybox.com/favicon.ico
-      - title: b碗
-        url: https://bowlroll.net/file/index
-        logo: https://bowlroll.net/favicon.ico
-      - title: nicovideo
-        url: https://3d.nicovideo.jp/?header
-        logo: https://3d.nicovideo.jp/favicon.ico
