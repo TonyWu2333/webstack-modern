@@ -9,7 +9,7 @@
 | Editing links | Hand-edit ~4,300 lines of HTML | Edit one `config.yml` |
 | Look | 2017 Xenon admin style | Rounded cards, pill sidebar, frosted sticky top bar, icon headings with link counts |
 | Motion | Basic hover lift | Staggered scroll-in, cursor spotlight on cards, eased sidebar submenu open/close, scrollspy highlighting |
-| Search | — | Instant filter by name, description or URL with highlighted matches; `/` or `⌘K` to focus, `Enter` opens the first result, `Esc` clears |
+| Search | — | Instant filter by name, description or URL with highlighted matches; `⌘K` / `Ctrl+K` to focus, `Enter` opens the first result, `Esc` clears |
 | Dark mode | — | Follows the system, with a manual toggle (remembered) |
 | Logo | Image only | Text logo from config, or your own image |
 | Fonts | Google Fonts (slow in mainland China) | System font stack |

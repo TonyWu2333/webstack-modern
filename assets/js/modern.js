@@ -246,15 +246,12 @@
     clear();
     input.focus();
   });
-  // "/" or Cmd/Ctrl+K focuses the search box
+  // Cmd/Ctrl+K focuses the search box
   document.addEventListener('keydown', function (e) {
-    var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
-    if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
       input.focus();
       input.select();
     }
   });
-  if (/Mac|iPhone|iPad/.test(navigator.platform)) box.querySelector('.search-kbd').title = '按 / 或 ⌘K 搜索';
-  else box.querySelector('.search-kbd').title = '按 / 或 Ctrl+K 搜索';
 })();

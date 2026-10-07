@@ -475,17 +475,6 @@ body,
     font-size: 12px;
 }
 
-.search-kbd {
-    padding: 1px 7px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--surface-2);
-    box-shadow: none;
-    color: var(--text-2);
-    font-family: inherit;
-    font-size: 11px;
-}
-
 .search-clear {
     display: none;
     color: var(--text-2) !important;
@@ -495,10 +484,6 @@ body,
 
 .search-clear:hover {
     color: var(--text) !important;
-}
-
-.nav-search.has-value .search-kbd {
-    display: none;
 }
 
 .nav-search.has-value .search-clear {
@@ -780,8 +765,7 @@ footer.main-footer .go-up a:hover {
         padding: 10px 16px;
     }
 
-    .page-container .main-content .navbar.user-info-navbar .user-info-menu,
-    .search-kbd {
+    .page-container .main-content .navbar.user-info-navbar .user-info-menu {
         display: none;
     }
 
