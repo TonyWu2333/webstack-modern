@@ -158,6 +158,10 @@ nav:
             url: https://news.ycombinator.com/
             logo: hackernews.svg
             desc: YC旗下的科技新闻与讨论社区
+          - title: Y Combinator
+            url: https://www.ycombinator.com/
+            logo: ycombinator.ico
+            desc: 硅谷知名创业孵化器，可查YC公司库与创业课程
   - name: 人工智能
     icon: fa-magic
     children:
