@@ -60,6 +60,15 @@
                         </a>
                     </li>
                 </ul>
+                <div class="nav-search" role="search">
+                    <i class="fa-search"></i>
+                    <input id="search" type="search" placeholder="搜索网站名称、描述或网址" autocomplete="off" spellcheck="false" aria-label="搜索网站">
+                    <span class="search-meta">
+                        <span class="search-count"></span>
+                        <kbd class="search-kbd">/</kbd>
+                        <a href="#" class="search-clear" aria-label="清空搜索"><i class="fa-times-circle"></i></a>
+                    </span>
+                </div>
                 <ul class="user-info-menu right-links list-inline list-unstyled">
                     <li>
                         <a href="#" class="theme-toggle" data-theme-toggle title="切换明暗">
@@ -70,6 +79,11 @@
                 </ul>
             </nav>
 {{sections}}
+            <div id="search-empty" class="search-empty" hidden>
+                <i class="fa-search"></i>
+                <p>没有找到与 “<strong class="search-empty-q"></strong>” 相关的网站</p>
+                <span>换个关键词试试，或按 Esc 清空</span>
+            </div>
             <footer class="main-footer sticky footer-type-1">
                 <div class="footer-inner">
                     <div class="footer-text">

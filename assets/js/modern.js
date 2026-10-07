@@ -120,11 +120,13 @@
   });
   var current = null;
   function spy() {
-    var hit = headings[0];
-    for (var k = 0; k < headings.length; k++) {
-      if (headings[k].el.getBoundingClientRect().top <= 120) hit = headings[k];
+    // sections hidden by the search filter don't count
+    var shown = headings.filter(function (h) { return h.el.offsetParent !== null; });
+    var hit = shown[0];
+    for (var k = 0; k < shown.length; k++) {
+      if (shown[k].el.getBoundingClientRect().top <= 120) hit = shown[k];
     }
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) hit = headings[headings.length - 1];
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) hit = shown[shown.length - 1];
     if (!hit || hit === current || !hit.link) return;
     current = hit;
     document.querySelectorAll('#main-menu li.active, #main-menu li.child-active').forEach(function (li) {
@@ -142,4 +144,117 @@
     requestAnimationFrame(function () { ticking = false; spy(); });
   }, { passive: true });
   spy();
+
+  // ---- search filter ----
+  var input = document.getElementById('search');
+  if (!input) return;
+  var box = input.parentNode;
+  var countEl = box.querySelector('.search-count');
+  var empty = document.getElementById('search-empty');
+
+  function esc(t) {
+    return t.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+  function highlight(text, re) {
+    if (!re) return esc(text);
+    var out = '';
+    var last = 0;
+    text.replace(re, function (m, at) {
+      out += esc(text.slice(last, at)) + '<mark>' + esc(m) + '</mark>';
+      last = at + m.length;
+      return m;
+    });
+    return out + esc(text.slice(last));
+  }
+
+  var groups = headings.map(function (h) {
+    var row = h.el.nextElementSibling;
+    var badge = h.el.querySelector('.cat-count');
+    var cards = Array.prototype.map.call(row.children, function (col) {
+      var w = col.querySelector('.xe-widget');
+      var t = w.querySelector('strong');
+      var d = w.querySelector('p');
+      var url = w.getAttribute('data-original-title') || '';
+      return { col: col, t: t, d: d, title: t.textContent, desc: d.textContent, url: url,
+        hay: (t.textContent + ' ' + d.textContent + ' ' + url).toLowerCase() };
+    });
+    return { h: h, row: row, badge: badge, total: badge ? badge.textContent : '', cards: cards };
+  });
+
+  var lastQuery = '';
+  function filter() {
+    var q = input.value.trim();
+    if (q === lastQuery) return;
+    lastQuery = q;
+    var terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+    var re = terms.length ? new RegExp(terms.map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|'), 'gi') : null;
+    var found = 0;
+    groups.forEach(function (g) {
+      var n = 0;
+      g.cards.forEach(function (c) {
+        var ok = terms.every(function (t) { return c.hay.indexOf(t) !== -1; });
+        c.col.classList.toggle('search-hidden', !ok);
+        c.t.innerHTML = highlight(c.title, re);
+        c.d.innerHTML = highlight(c.desc, re);
+        if (ok) n++;
+      });
+      found += n;
+      var hide = terms.length > 0 && n === 0;
+      g.h.el.classList.toggle('search-hidden', hide);
+      g.row.classList.toggle('search-hidden', hide);
+      if (g.badge) g.badge.textContent = terms.length ? n : g.total;
+      if (g.h.link) g.h.link.parentNode.classList.toggle('search-dim', hide);
+    });
+    // dim a parent group when every one of its subcategories is filtered out
+    document.querySelectorAll('#main-menu > li.has-sub').forEach(function (li) {
+      li.classList.toggle('search-dim', !li.querySelector('ul > li:not(.search-dim)'));
+    });
+    box.classList.toggle('has-value', q.length > 0);
+    countEl.textContent = terms.length ? found + ' 个结果' : '';
+    empty.hidden = !(terms.length && found === 0);
+    empty.querySelector('.search-empty-q').textContent = q;
+    window.scrollTo(0, 0);
+    current = null;
+    spy();
+  }
+  function firstResult() {
+    for (var i = 0; i < groups.length; i++) {
+      for (var j = 0; j < groups[i].cards.length; j++) {
+        var c = groups[i].cards[j];
+        if (!c.col.classList.contains('search-hidden')) return c;
+      }
+    }
+    return null;
+  }
+  function clear() {
+    input.value = '';
+    filter();
+  }
+
+  input.addEventListener('input', filter);
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      clear();
+      input.blur();
+    } else if (e.key === 'Enter' && input.value.trim()) {
+      var c = firstResult();
+      if (c && c.url) window.open(c.url, '_blank');
+    }
+  });
+  box.querySelector('.search-clear').addEventListener('click', function (e) {
+    e.preventDefault();
+    clear();
+    input.focus();
+  });
+  // "/" or Cmd/Ctrl+K focuses the search box
+  document.addEventListener('keydown', function (e) {
+    var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
+    if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      input.focus();
+      input.select();
+    }
+  });
+  if (/Mac|iPhone|iPad/.test(navigator.platform)) box.querySelector('.search-kbd').title = '按 / 或 ⌘K 搜索';
+  else box.querySelector('.search-kbd').title = '按 / 或 Ctrl+K 搜索';
 })();
