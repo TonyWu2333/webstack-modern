@@ -8,7 +8,7 @@ site:
   description: 个人常用网站收藏
   keywords: 网址导航,设计导航,工具导航
   # 以下图片路径相对于仓库根目录，也可以填完整的 https:// 地址
-  favicon: assets/images/favicon.png
+  favicon: assets/images/favicon.svg
   # 想用图片 Logo 时取消下面两行注释（原版 WebStack 图片 Logo 仍在 assets/images 里）
   # logo: assets/images/logo@2x.png                  # 侧栏展开时的 Logo
   # logo_collapsed: assets/images/logo-collapsed@2x.png  # 侧栏收起时的 Logo
