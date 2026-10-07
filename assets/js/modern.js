@@ -47,6 +47,63 @@
     });
   });
 
+  // ---- sidebar submenu expand / collapse ----
+  // Replaces Xenon's TweenMax versions (looked up globally at click time) with CSS transitions:
+  // height eases open, child items fade and slide in one after another.
+  var SUB_MS = 360;
+  document.querySelectorAll('#main-menu > li > ul').forEach(function (ul) {
+    Array.prototype.forEach.call(ul.children, function (li, i) { li.style.setProperty('--i', i); });
+  });
+  function whenDone(el, fn) {
+    var done = false;
+    function finish(e) {
+      if (done || (e && (e.target !== el || e.propertyName !== 'height'))) return;
+      done = true;
+      el.removeEventListener('transitionend', finish);
+      fn();
+    }
+    el.addEventListener('transitionend', finish);
+    setTimeout(finish, SUB_MS + 80);
+  }
+  function scrollbarUpdate() {
+    if (typeof window.ps_update === 'function') window.ps_update(true);
+  }
+  window.sidebar_menu_item_expand = function ($li, $sub) {
+    var sidebarCollapsed = window.public_vars && public_vars.$sidebarMenu.hasClass('collapsed');
+    if ($li.data('is-busy') || ($li.parent('.main-menu').length && sidebarCollapsed)) return;
+    var ul = $sub[0];
+    $li.addClass('expanded').data('is-busy', true);
+    ul.classList.remove('sub-out');
+    ul.classList.add('sub-pre');
+    ul.style.display = 'block';
+    var target = ul.scrollHeight;
+    ul.style.height = '0px';
+    void ul.offsetHeight; // commit the start state before animating
+    ul.classList.remove('sub-pre');
+    ul.style.height = target + 'px';
+    whenDone(ul, function () {
+      ul.style.height = '';
+      $li.data('is-busy', false);
+      scrollbarUpdate();
+    });
+  };
+  window.sidebar_menu_item_collapse = function ($li, $sub) {
+    if ($li.data('is-busy')) return;
+    var ul = $sub[0];
+    $li.removeClass('expanded').data('is-busy', true);
+    ul.style.height = ul.offsetHeight + 'px';
+    void ul.offsetHeight;
+    ul.classList.add('sub-out');
+    ul.style.height = '0px';
+    whenDone(ul, function () {
+      // no inline display:none, so the hover flyout still works when the sidebar is collapsed
+      ul.removeAttribute('style');
+      ul.classList.remove('sub-out');
+      $li.data('is-busy', false).removeClass('opened');
+      scrollbarUpdate();
+    });
+  };
+
   // ---- highlight the sidebar entry of the section in view ----
   var headings = Array.prototype.map.call(document.querySelectorAll('.main-content h4.text-gray > i[id]'), function (i) {
     return { id: i.id, el: i.parentNode, link: document.querySelector('#main-menu a[href="#' + i.id + '"]') };

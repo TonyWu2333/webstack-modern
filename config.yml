@@ -16,11 +16,11 @@ site:
   top_links:
     - name: GitHub
       icon: fa-github
-      url: https://github.com/TonyWu2333/webstack-nav
+      url: https://github.com/TonyWu2333/webstack-modern
   # 页脚，支持 HTML
   footer: >-
-    &copy; 2026 我的网址导航 · Theme by
-    <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank"><strong>WebStack</strong></a>
+    &copy; 2026 我的网址导航 · 主题基于
+    <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank"><strong>WebStack</strong></a> 美化
   # 插入到 <head> 里的额外 HTML（比如你自己的统计代码），不需要就留空
   head: ""
 

@@ -170,6 +170,31 @@ body,
     font-size: 13px;
 }
 
+/* submenu open / close (driven by modern.js) */
+.sidebar-menu:not(.collapsed) .main-menu > li > ul {
+    transition: height .36s var(--ease);
+}
+
+.sidebar-menu:not(.collapsed) .main-menu > li > ul > li {
+    transition: opacity .3s ease, transform .4s var(--ease);
+    transition-delay: calc(min(var(--i, 0), 10) * 28ms + 40ms);
+}
+
+.sidebar-menu .main-menu > li > ul.sub-pre > li,
+.sidebar-menu .main-menu > li > ul.sub-out > li {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.sidebar-menu .main-menu > li > ul.sub-out > li {
+    transition-duration: .18s;
+    transition-delay: 0s;
+}
+
+.sidebar-menu .main-menu > li.expanded > a {
+    color: #fff;
+}
+
 .sidebar-menu:not(.collapsed) .main-menu > li > ul:before {
     content: "";
     position: absolute;

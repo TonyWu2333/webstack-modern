@@ -1,6 +1,20 @@
-# webstack-nav
+# WebStack Modern
 
-A static link-navigation site based on [WebStack](https://github.com/WebStackPage/WebStackPage.github.io). The page looks the same as the original, but all links live in a single config file instead of hand-written HTML.
+**A beautified, modernized version of [WebStack](https://github.com/WebStackPage/WebStackPage.github.io)** — the popular static link-navigation page (webstack.cc). It keeps WebStack's layout and link collection, and adds a refreshed visual style, smooth motion, dark mode, and a config-file workflow.
+
+## What's different from the original WebStack
+
+| | Original WebStack | WebStack Modern |
+|---|---|---|
+| Editing links | Hand-edit ~4,300 lines of HTML | Edit one `config.yml` |
+| Look | 2017 Xenon admin style | Rounded cards, pill sidebar, frosted sticky top bar, icon headings with link counts |
+| Motion | Basic hover lift | Staggered scroll-in, cursor spotlight on cards, eased sidebar submenu open/close, scrollspy highlighting |
+| Dark mode | — | Follows the system, with a manual toggle (remembered) |
+| Logo | Image only | Text logo from config, or your own image |
+| Fonts | Google Fonts (slow in mainland China) | System font stack |
+| Third-party code | Author's Baidu/Google analytics, AdSense, referral links | Removed |
+
+Motion respects `prefers-reduced-motion`.
 
 ## Editing links
 
@@ -26,7 +40,8 @@ nav:
 - `title` and `url` are required; `desc` and `logo` are optional (missing logo falls back to `default.png`).
 - To add a logo, drop the image into `assets/images/logos/` and reference its filename.
 - Sidebar icons: see class names in `assets/css/fonts/linecons/css/linecons.css`.
-- Site title, logo, footer and extra `<head>` HTML (e.g. your own analytics) are under `site:`.
+- Site title, name/logo, footer and extra `<head>` HTML (e.g. your own analytics) are under `site:`.
+- Accent colors: `--accent` / `--accent-2` at the top of `assets/css/modern.css`.
 
 ## Local preview
 
@@ -40,6 +55,13 @@ npx serve dist
 
 Import this repo in Vercel. `vercel.json` already sets the build command (`npm run build`) and output directory (`dist`), so no extra configuration is needed. Every push redeploys automatically.
 
+## Project layout
+
+- `config.yml` — site settings and all links
+- `template.html` — page skeleton
+- `build.js` — renders `config.yml` into `dist/index.html`
+- `assets/css/modern.css`, `assets/js/modern.js` — the modern skin, layered on top of the untouched original WebStack/Xenon assets
+
 ## Credits
 
-Theme by [WebStack](https://github.com/WebStackPage/WebStackPage.github.io) (MIT), built on the Xenon admin template.
+Based on [WebStack](https://github.com/WebStackPage/WebStackPage.github.io) by Viggo (MIT), built on the Xenon admin template. This project is also MIT licensed.
