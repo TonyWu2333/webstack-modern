@@ -59,22 +59,18 @@ nav:
             url: https://sourceforge.net/
             logo: https://a.fsdn.com/con/img/sandiego/logo-180x180.png
             desc: 开源软件平台
-          - title: stackoverflow
-            url: https://stackoverflow.org.cn/
-            logo: https://stackoverflow.org.cn/favicon.ico
-            desc: 计算机问答社区
       - name: 前端
         links:
           - title: MDN
             url: https://developer.mozilla.org/zh-CN/
-            logo: https://developer.mozilla.org/favicon-48x48.cbbd161b.png
+            logo: mdn.png
             desc: Resources for Developers
           - title: uiverse
             url: https://uiverse.io/
             logo: https://uiverse.io/favicon.ico
             desc: 前端开源UI组件网站
           - title: naiveUI
-            url: https://www.naiveui.com/zh-CN/os-theme?from=thosefree.com
+            url: https://www.naiveui.com/zh-CN/
             logo: https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg
             desc: 简洁的前端UI框架
           - title: Tailwind css
@@ -135,7 +131,7 @@ nav:
             desc: 可自定义主题色的插画网站
           - title: OUCH
             url: https://igoutu.cn/illustrations/style--pale
-            logo: https://maxst.icons8.com/vue-static/ouch/seo/favicon.png
+            logo: ouch.png
             desc: 可选择画风的插画网站
           - title: codepen
             url: https://codepen.io/
@@ -157,15 +153,15 @@ nav:
             desc: 运维面板
           - title: express
             url: https://expressjs.com/zh-cn/
-            logo: https://expressjs.com/images/favicon.png
+            logo: express.png
             desc: nodejs框架
           - title: let's encrypt
             url: https://letsencrypt.org/zh-cn/
             logo: https://th.bing.com/th?id=ODLS.bfbcf7a1-9268-4e33-ac3e-67b79e91e5b6&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2
             desc: 免费SSL证书
-          - title: SMMS
-            url: https://sm.ms/
-            logo: https://sm.ms/favicon.ico
+          - title: S.EE（原 SM.MS）
+            url: https://s.ee/
+            logo: s-ee.ico
             desc: 免费图床
           - title: tcp.ping
             url: https://tcp.ping.pe/
@@ -190,9 +186,6 @@ nav:
           - title: bugku
             url: https://ctf.bugku.com/
             logo: https://ctf.bugku.com/favicon.ico
-          - title: OWASP
-            url: https://ctf.etao.net/
-            logo: https://ctf.etao.net/themes/core/static/img/favicon.ico?d=0f2a9574
           - title: BUUCTF
             url: https://buuoj.cn/
             logo: https://buuoj.cn/themes/buu_core/static/img/favicon.ico
@@ -211,7 +204,7 @@ nav:
             logo: https://psc2.cf2.poecdn.net/assets/favicon.svg
             desc: 集合全球各大模型
           - title: 通义千问
-            url: https://tongyi.aliyun.com/qianwen/
+            url: https://www.qianwen.com/
             logo: https://img.alicdn.com/imgextra/i4/O1CN01FOwagl1XBpyVA2QVy_!!6000000002886-2-tps-512-512.png
             desc: 阿里的大语言模型
           - title: 文心一言
@@ -265,25 +258,19 @@ nav:
         links:
           - title: 次元动漫城
             url: https://www.cycity.pro/
-            logo: https://www.cycity.pro/files/site.webp
+            logo: cycity.png
           - title: 樱舞动漫
             url: https://www.maigo.cc/
-            logo: https://www.maigo.cc/favicon.ico
-          - title: 异世界动漫
-            url: https://www.lldm.net/
-            logo: https://www.lldm.net/template/conch/asset/img/favicon.png
-          - title: 哈哩哈哩
-            url: http://www.halihali9.com/
-            logo: http://www.halihali9.com/favicon.ico
+            logo: maigo.jpg
       - name: 动漫资源下载
         links:
           - title: 萌番组
             url: https://bangumi.moe/
-            logo: https://tonywu2333.github.io/tony%E7%9A%84%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99%20__files/1d91719d9a0308dcbaec741661f2de6.png
+            logo: bangumi-moe.png
             desc: 动漫BT资源
           - title: 萌番组Lite
             url: https://bangumi.moe/lite/
-            logo: https://tonywu2333.github.io/tony%E7%9A%84%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99%20__files/1d91719d9a0308dcbaec741661f2de6.png
+            logo: bangumi-moe.png
             desc: 萌番组Lite版
           - title: 动漫花园
             url: https://www.dmhy.org/
@@ -301,10 +288,6 @@ nav:
   - name: 影视
     icon: fa-video-camera
     links:
-      - title: 音范丝
-        url: https://www.yinfans.net/
-        logo: https://www.yinfans.me/wp-content/themes/Loos2/images/favicon.ico
-        desc: 4k电影资源下载
       - title: vidhub
         url: https://vidhub1.cc/
         logo: https://s2.loli.net/2024/10/12/rTyIS1gNzYjJ9oM.png
@@ -330,15 +313,11 @@ nav:
         desc: 二维码生成器
       - title: PDFcandy
         url: https://pdfcandy.com/cn/
-        logo: https://pdfcandy.com/favicon.ico
+        logo: pdfcandy.ico
         desc: PDF在线编辑
   - name: 学习
     icon: fa-graduation-cap
     links:
-      - title: zlibrary
-        url: https://zh.z-lib.gs/
-        logo: https://zh.z-lib.gs/favicon.ico
-        desc: 书籍资源网站
       - title: 学习通
         url: https://zjut.fanya.chaoxing.com/portal
         logo: https://android-artworks.25pp.com/fs08/2021/07/19/1/106_81ef6e834ce4919f3aa78e2e7976c4b7_con_130x130.png
@@ -354,10 +333,6 @@ nav:
         url: https://diakov.net/
         logo: https://diakov.net/favicon.ico
         desc: 俄国软件资源网站
-      - title: RARBG
-        url: https://rarbg.so/
-        logo: https://rarbg.so/favicon.ico
-        desc: BT资源网站
   - name: 游戏
     icon: fa-gamepad
     children:
@@ -366,12 +341,6 @@ nav:
           - title: skidrowcodex
             url: https://www.skidrowcodex.net/
             logo: https://www.skidrowcodex.net/wp-content/uploads/2018/12/1.png
-          - title: skidrowreloaded
-            url: https://www.skidrowreloaded.com/
-            logo: https://www.skidrowreloaded.com/wp-content/uploads/2018/06/cropped-faviicon-32x32.png
-          - title: skidrowcpy
-            url: https://skidrowcpy.games/
-            logo: https://skidrowcpy.games/wp-content/uploads/2019/06/favicon.ico
           - title: flysheep
             url: https://www.flysheep6.com/
             logo: https://images.weserv.nl/?url=https://r534.com/flysheep/i/2023/02/25/5fgq.jpg
@@ -410,21 +379,6 @@ nav:
             url: https://modrinth.com/
             logo: https://modrinth.com/favicon-light.ico
             desc: The place for Minecraft
-  - name: 音乐
-    icon: fa-music
-    links:
-      - title: 六音
-        url: https://www.sixyin.com/
-        logo: https://www.sixyin.com/favicon.ico
-        desc: 免费音源
-      - title: HEmusic
-        url: https://music.wjhe.top/
-        logo: https://music.wjhe.top/favicon.ico
-        desc: 在线免费音乐网站
-      - title: slider.kz
-        url: https://hayqbhgr.slider.kz/
-        logo: https://hayqbhgr.slider.kz/favicon.ico
-        desc: 音乐资源下载
   - name: MMD
     icon: fa-child
     links:
