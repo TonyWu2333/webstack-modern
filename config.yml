@@ -93,36 +93,26 @@ nav:
             url: https://animate.style/
             logo: https://animate.style/img/favicon.ico
             desc: 一个随时可用的CSS动画库
-          - title: vercel
-            url: https://vercel.com/
-            logo: https://vercel.com/favicon.ico
-            desc: 静态网站部署平台
           - title: daisyUI
             url: https://daisyui.com/
             logo: https://img.daisyui.com/images/daisyui-logo/daisyui-logomark.svg
             desc: 基于Tailwind css的组件库
       - name: 后端
         links:
-          - title: 宝塔面板
-            url: https://www.bt.cn/new/index.html
-            logo: https://www.bt.cn/favicon.ico
-            desc: 运维面板
           - title: express
             url: https://expressjs.com/zh-cn/
             logo: express.png
             desc: nodejs框架
-          - title: let's encrypt
-            url: https://letsencrypt.org/zh-cn/
-            logo: https://th.bing.com/th?id=ODLS.bfbcf7a1-9268-4e33-ac3e-67b79e91e5b6&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2
-            desc: 免费SSL证书
           - title: S.EE（原 SM.MS）
             url: https://s.ee/
             logo: s-ee.ico
             desc: 免费图床
-          - title: tcp.ping
-            url: https://tcp.ping.pe/
-            logo: https://tcp.ping.pe/favicon.ico
-            desc: 测试服务器端口
+      - name: 部署与运维
+        links:
+          - title: vercel
+            url: https://vercel.com/
+            logo: https://vercel.com/favicon.ico
+            desc: 静态网站部署平台
           - title: cloudflare
             url: https://www.cloudflare.com/zh-cn/
             logo: https://www.cloudflare.com/favicon.ico
@@ -131,6 +121,18 @@ nav:
             url: https://console.dogyun.com/
             logo: https://assets.dogyun.com/home/img/logo-128px.png
             desc: 性价比服务器
+          - title: 宝塔面板
+            url: https://www.bt.cn/new/index.html
+            logo: https://www.bt.cn/favicon.ico
+            desc: 运维面板
+          - title: let's encrypt
+            url: https://letsencrypt.org/zh-cn/
+            logo: https://th.bing.com/th?id=ODLS.bfbcf7a1-9268-4e33-ac3e-67b79e91e5b6&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2
+            desc: 免费SSL证书
+          - title: tcp.ping
+            url: https://tcp.ping.pe/
+            logo: https://tcp.ping.pe/favicon.ico
+            desc: 测试服务器端口
       - name: 算法
         links:
           - title: codeforce
@@ -143,9 +145,46 @@ nav:
             desc: 力扣，算法刷题平台
       - name: 网安
         links:
-          - title: bugku
+          - title: Bugku
             url: https://ctf.bugku.com/
-            logo: https://ctf.bugku.com/favicon.ico
+            logo: bugku.ico
+            desc: 国内CTF练习平台
+          - title: CTFHub
+            url: https://www.ctfhub.com/
+            logo: ctfhub.png
+            desc: CTF技能树与赛事日历
+          - title: BUUCTF
+            url: https://buuoj.cn/
+            logo: buuctf.png
+            desc: 收录大量历年赛题的CTF靶场
+          - title: 攻防世界
+            url: https://adworld.xctf.org.cn/
+            logo: adworld.ico
+            desc: XCTF官方CTF练习平台
+          - title: CTFtime
+            url: https://ctftime.org/
+            logo: ctftime.png
+            desc: 全球CTF赛事日历与战队排名
+          - title: Web Security Academy
+            url: https://portswigger.net/web-security
+            logo: portswigger.png
+            desc: PortSwigger出品的免费Web安全教程与靶场
+          - title: Hack The Box
+            url: https://www.hackthebox.com/
+            logo: hackthebox.webp
+            desc: 渗透测试实战靶机
+          - title: TryHackMe
+            url: https://tryhackme.com/
+            logo: tryhackme.png
+            desc: 引导式网络安全学习平台
+          - title: 先知社区
+            url: https://xz.aliyun.com/
+            logo: xianzhi.png
+            desc: 阿里云安全技术社区
+          - title: CyberChef
+            url: https://gchq.github.io/CyberChef/
+            logo: cyberchef.ico
+            desc: 编码、解码与加解密瑞士军刀
   - name: 人工智能
     icon: fa-magic
     children:
