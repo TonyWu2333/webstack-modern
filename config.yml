@@ -223,6 +223,95 @@ nav:
         url: https://igoutu.cn/illustrations/style--pale
         logo: ouch.png
         desc: 可选择画风的插画网站
+  - name: 产品
+    icon: fa-lightbulb-o
+    children:
+      - name: 原型设计
+        links:
+          - title: Figma
+            url: https://www.figma.com/
+            logo: figma.png
+            desc: 协作式界面设计与原型工具
+          - title: 墨刀
+            url: https://modao.cc/
+            logo: modao.ico
+            desc: 国产在线原型设计与产研协作
+          - title: Axure
+            url: https://www.axure.com/
+            logo: axure.ico
+            desc: 高保真交互原型与需求文档
+          - title: 即时设计
+            url: https://js.design/
+            logo: js-design.ico
+            desc: 国产在线 UI 设计协作工具
+          - title: MasterGo
+            url: https://mastergo.com/
+            logo: mastergo.png
+            desc: 国产专业 UI 设计与原型平台
+      - name: 流程图和思维导图
+        links:
+          - title: ProcessOn
+            url: https://www.processon.com/
+            logo: processon.ico
+            desc: 在线流程图与思维导图
+          - title: Whimsical
+            url: https://whimsical.com/
+            logo: whimsical.png
+            desc: 流程图、线框图与白板
+          - title: 幕布
+            url: https://mubu.com/
+            logo: mubu.ico
+            desc: 大纲笔记，一键生成思维导图
+          - title: XMind
+            url: https://xmind.cn/
+            logo: xmind.avif
+            desc: 经典思维导图工具
+      - name: 文档协作
+        links:
+          - title: 飞书
+            url: https://www.feishu.cn/
+            logo: feishu.png
+            desc: 字节跳动的办公协作平台
+          - title: Notion
+            url: https://www.notion.so/
+            logo: notion.png
+            desc: 笔记、文档与知识库一体化
+          - title: 语雀
+            url: https://www.yuque.com/
+            logo: yuque.svg
+            desc: 阿里的文档与知识库工具
+      - name: 社区资讯
+        links:
+          - title: 人人都是产品经理
+            url: https://www.woshipm.com/
+            logo: woshipm.ico
+            desc: 产品经理学习交流社区
+          - title: Product Hunt
+            url: https://www.producthunt.com/
+            logo: producthunt.png
+            desc: 每日发现全球新产品
+          - title: 少数派
+            url: https://sspai.com/
+            logo: sspai.ico
+            desc: 效率工具与数字生活
+          - title: 36氪
+            url: https://36kr.com/
+            logo: 36kr.png
+            desc: 科技创投资讯
+      - name: 数据分析
+        links:
+          - title: 神策数据
+            url: https://www.sensorsdata.cn/
+            logo: sensorsdata.ico
+            desc: 用户行为分析平台
+          - title: Google Analytics
+            url: https://analytics.google.com/
+            logo: google-analytics.svg
+            desc: 谷歌网站流量分析
+          - title: 百度统计
+            url: https://tongji.baidu.com/
+            logo: baidu-tongji.ico
+            desc: 百度网站流量分析
   - name: 动漫
     icon: fa-smile-o
     links:
