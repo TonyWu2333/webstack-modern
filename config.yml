@@ -107,7 +107,7 @@ nav:
             url: https://s.ee/
             logo: s-ee.ico
             desc: 免费图床
-      - name: 部署与运维
+      - name: 运维
         links:
           - title: vercel
             url: https://vercel.com/
@@ -153,38 +153,6 @@ nav:
             url: https://www.ctfhub.com/
             logo: ctfhub.png
             desc: CTF技能树与赛事日历
-          - title: BUUCTF
-            url: https://buuoj.cn/
-            logo: buuctf.png
-            desc: 收录大量历年赛题的CTF靶场
-          - title: 攻防世界
-            url: https://adworld.xctf.org.cn/
-            logo: adworld.ico
-            desc: XCTF官方CTF练习平台
-          - title: CTFtime
-            url: https://ctftime.org/
-            logo: ctftime.png
-            desc: 全球CTF赛事日历与战队排名
-          - title: Web Security Academy
-            url: https://portswigger.net/web-security
-            logo: portswigger.png
-            desc: PortSwigger出品的免费Web安全教程与靶场
-          - title: Hack The Box
-            url: https://www.hackthebox.com/
-            logo: hackthebox.webp
-            desc: 渗透测试实战靶机
-          - title: TryHackMe
-            url: https://tryhackme.com/
-            logo: tryhackme.png
-            desc: 引导式网络安全学习平台
-          - title: 先知社区
-            url: https://xz.aliyun.com/
-            logo: xianzhi.png
-            desc: 阿里云安全技术社区
-          - title: CyberChef
-            url: https://gchq.github.io/CyberChef/
-            logo: cyberchef.ico
-            desc: 编码、解码与加解密瑞士军刀
   - name: 人工智能
     icon: fa-magic
     children:
