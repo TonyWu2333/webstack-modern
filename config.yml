@@ -85,10 +85,6 @@ nav:
             url: https://echarts.apache.org/zh/index.html
             logo: https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/zh/images/favicon.png
             desc: 一个强大、可交互的浏览器图表库
-          - title: fontawesome
-            url: https://fontawesome.com/
-            logo: https://fontawesome.com/favicon.ico
-            desc: 免费icon网站
           - title: diffchecker
             url: https://www.diffchecker.com/
             logo: https://www.diffchecker.com/favicon.ico
@@ -214,15 +210,23 @@ nav:
             desc: AI绘画工作流UI
   - name: 设计
     icon: fa-paint-brush
-    links:
-      - title: unDraw
-        url: https://undraw.co/illustrations
-        logo: https://undraw.co/favicon.ico
-        desc: 可自定义主题色的插画网站
-      - title: OUCH
-        url: https://igoutu.cn/illustrations/style--pale
-        logo: ouch.png
-        desc: 可选择画风的插画网站
+    children:
+      - name: 插画
+        links:
+          - title: unDraw
+            url: https://undraw.co/illustrations
+            logo: https://undraw.co/favicon.ico
+            desc: 可自定义主题色的插画网站
+          - title: OUCH
+            url: https://igoutu.cn/illustrations/style--pale
+            logo: ouch.png
+            desc: 可选择画风的插画网站
+      - name: icon
+        links:
+          - title: fontawesome
+            url: https://fontawesome.com/
+            logo: https://fontawesome.com/favicon.ico
+            desc: 免费icon网站
   - name: 产品
     icon: fa-lightbulb-o
     children:
@@ -232,28 +236,20 @@ nav:
             url: https://www.figma.com/
             logo: figma.png
             desc: 协作式界面设计与原型工具
-          - title: 墨刀
-            url: https://modao.cc/
-            logo: modao.ico
-            desc: 国产在线原型设计与产研协作
           - title: Axure
             url: https://www.axure.com/
             logo: axure.ico
             desc: 高保真交互原型与需求文档
-          - title: 即时设计
-            url: https://js.design/
-            logo: js-design.ico
-            desc: 国产在线 UI 设计协作工具
           - title: MasterGo
             url: https://mastergo.com/
             logo: mastergo.png
             desc: 国产专业 UI 设计与原型平台
+          - title: excalidraw
+            url: https://excalidraw.com/
+            logo: https://excalidraw.com/favicon-32x32.png
+            desc: 手绘原型图
       - name: 流程图和思维导图
         links:
-          - title: ProcessOn
-            url: https://www.processon.com/
-            logo: processon.ico
-            desc: 在线流程图与思维导图
           - title: Whimsical
             url: https://whimsical.com/
             logo: whimsical.png
@@ -300,10 +296,6 @@ nav:
             desc: 科技创投资讯
       - name: 数据分析
         links:
-          - title: 神策数据
-            url: https://www.sensorsdata.cn/
-            logo: sensorsdata.ico
-            desc: 用户行为分析平台
           - title: Google Analytics
             url: https://analytics.google.com/
             logo: google-analytics.svg
@@ -349,10 +341,6 @@ nav:
         url: https://123apps.com/cn/
         logo: https://convert.io/static/i/v3/favicon.svg
         desc: 强大的工具网站
-      - title: excalidraw
-        url: https://excalidraw.com/
-        logo: https://excalidraw.com/favicon-32x32.png
-        desc: 手绘原型图
       - title: aconvert
         url: https://www.aconvert.com/
         logo: https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.aconvert.com&size=16
