@@ -67,6 +67,12 @@ html {
     scroll-padding-top: 80px;
 }
 
+/* no rubber-band overscroll: it reveals the light page background next to the dark sidebar */
+html,
+body {
+    overscroll-behavior-y: none;
+}
+
 body,
 .page-body {
     background: var(--bg);
