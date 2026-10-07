@@ -123,15 +123,9 @@ body,
 
 .brand-mark {
     flex: none;
-    display: grid;
-    place-items: center;
     width: 34px;
     height: 34px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
+    border-radius: 8px; /* matches the favicon's corner radius */
     box-shadow: 0 6px 16px -6px var(--accent);
 }
 

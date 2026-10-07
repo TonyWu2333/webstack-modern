@@ -76,8 +76,9 @@ ${(c.links || []).map(card).join('\n')}
 // child categories reuse their parent's icon
 const sections = nav.flatMap((item) => (item.children || [item]).map((c) => section(c, item.icon))).join('\n');
 
-// sidebar brand: image logo if configured, otherwise a text logo from site.name
+// sidebar brand: image logo if configured, otherwise the favicon + site.name
 const name = site.name || site.title;
+const favicon = asset(site.favicon || 'assets/images/favicon.png');
 const brand = site.logo
   ? `                        <a href="./" class="logo-expanded">
                             <img src="${esc(asset(site.logo))}" width="100%" alt="" />
@@ -86,7 +87,7 @@ const brand = site.logo
                             <img src="${esc(asset(site.logo_collapsed || site.logo))}" width="40" alt="" />
                         </a>`
   : `                        <a href="./" class="brand">
-                            <span class="brand-mark">${esc(site.mark || [...name][0])}</span>
+                            <img class="brand-mark" src="${esc(favicon)}" alt="" />
                             <span class="brand-name">${esc(name)}</span>
                         </a>`;
 
@@ -100,7 +101,7 @@ const vars = {
   title: esc(site.title),
   keywords: esc(site.keywords),
   description: esc(site.description),
-  favicon: esc(asset(site.favicon || 'assets/images/favicon.png')),
+  favicon: esc(favicon),
   brand,
   head: site.head || '', // raw HTML, e.g. your own analytics snippet
   footer: site.footer || '', // raw HTML
