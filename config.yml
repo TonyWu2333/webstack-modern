@@ -152,6 +152,12 @@ nav:
             url: https://www.ctfhub.com/
             logo: ctfhub.png
             desc: CTF技能树与赛事日历
+      - name: 技术资讯
+        links:
+          - title: Hacker News
+            url: https://news.ycombinator.com/
+            logo: hackernews.svg
+            desc: YC旗下的科技新闻与讨论社区
   - name: 人工智能
     icon: fa-magic
     children:
