@@ -1,6 +1,7 @@
 // Generate dist/index.html from config.yml + template.html
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const yaml = require('js-yaml');
 
 const root = __dirname;
@@ -106,6 +107,11 @@ const vars = {
   top_links: topLinks,
   menu,
   sections,
+  // cache-busting version for the skin files, so browsers pick up edits immediately
+  v: crypto.createHash('md5')
+    .update(['assets/css/modern.css', 'assets/js/modern.js'].map((f) => fs.readFileSync(path.join(root, f))).join(''))
+    .digest('hex')
+    .slice(0, 8),
 };
 
 const html = fs.readFileSync(path.join(root, 'template.html'), 'utf8').replace(/\{\{(\w+)\}\}/g, (_, k) => vars[k] ?? '');

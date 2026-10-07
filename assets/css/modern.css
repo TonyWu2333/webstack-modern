@@ -171,7 +171,8 @@ body,
 }
 
 /* submenu open / close (driven by modern.js) */
-.sidebar-menu:not(.collapsed) .main-menu > li > ul {
+.sidebar-menu:not(.collapsed) .main-menu > li > ul,
+.sidebar-menu .main-menu > li > ul.sub-out {
     transition: height .36s var(--ease);
 }
 
@@ -220,21 +221,74 @@ body,
     background-color: rgba(255, 255, 255, .2);
 }
 
+/* ---------- sidebar collapse / expand (desktop) ----------
+   Xenon swaps the sidebar between 280px and 80px instantly and hides labels with
+   display:none. Here every change is an animatable property instead: the width
+   eases, labels fade, and icons keep their exact position so nothing jumps. */
 @media screen and (min-width: 768px) {
+    .sidebar-menu {
+        transition: width .42s var(--ease), background-color .3s ease;
+    }
+
+    /* stay pinned while collapsed (Xenon lets the collapsed menu scroll away) */
+    .sidebar-menu.collapsed .sidebar-menu-inner {
+        position: fixed;
+        overflow: visible;
+    }
+
+    .sidebar-menu .logo-env,
+    .sidebar-menu .main-menu > li > a {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .sidebar-menu .brand-name,
+    .sidebar-menu .main-menu > li > a > span,
+    .sidebar-menu .main-menu > li.has-sub > a:before {
+        transition: opacity .28s ease .12s, transform .42s var(--ease);
+    }
+
     .sidebar-menu.collapsed .logo-env {
-        padding: 22px 0;
+        padding: 22px 24px;
     }
 
-    .sidebar-menu.collapsed .brand {
-        justify-content: center;
-    }
-
-    .sidebar-menu.collapsed .brand-name {
-        display: none;
+    .sidebar-menu.collapsed .logo-env .logo {
+        float: left;
     }
 
     .sidebar-menu.collapsed .main-menu {
-        padding: 0 12px;
+        padding: 0 14px;
+    }
+
+    .sidebar-menu.collapsed .main-menu > li {
+        text-align: left;
+    }
+
+    /* same icon size and x position in both states (icon centred in the 80px rail) */
+    .sidebar-menu .main-menu > li > a {
+        padding-left: 17px;
+    }
+
+    .sidebar-menu .main-menu > li > a > i {
+        transition: margin .42s var(--ease);
+    }
+
+    .sidebar-menu.collapsed .main-menu > li > a > i {
+        font-size: inherit;
+        margin-right: 10px;
+    }
+
+    .sidebar-menu.collapsed .brand-name,
+    .sidebar-menu.collapsed .main-menu > li > a > span,
+    .sidebar-menu.collapsed .main-menu > li.has-sub > a:before {
+        display: inline-block !important;
+        opacity: 0;
+        transform: translateX(-6px);
+        transition: opacity .14s ease, transform .3s var(--ease);
+    }
+
+    .sidebar-menu.collapsed .main-menu > li.has-sub > a:before {
+        transform: rotate(-90deg);
     }
 
     .sidebar-menu.collapsed .main-menu > li.active,
@@ -242,6 +296,7 @@ body,
         background: none;
     }
 
+    /* hover flyout for submenus while collapsed */
     .sidebar-menu.collapsed .main-menu > li > ul {
         background: var(--side-bg);
         border: 1px solid var(--side-line);
@@ -251,8 +306,31 @@ body,
         box-shadow: 0 20px 40px -12px rgba(0, 0, 0, .5);
     }
 
+    .sidebar-menu.collapsed .main-menu > li:hover > ul {
+        animation: flyout-in .22s var(--ease);
+    }
+
     .sidebar-menu.collapsed .main-menu > li > ul > li > a {
         padding-left: 14px;
+    }
+
+    /* a submenu still folding while the sidebar collapses stays in the flow */
+    .sidebar-menu.collapsed .main-menu > li > ul.sub-out {
+        position: static;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        box-shadow: none;
+        animation: none;
+    }
+}
+
+@keyframes flyout-in {
+    from {
+        opacity: 0;
+        transform: translateX(-6px);
     }
 }
 

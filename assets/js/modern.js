@@ -104,6 +104,16 @@
     });
   };
 
+  // Collapsing the whole sidebar: fold any open submenu along with it instead of letting it vanish.
+  // Capture phase so this runs before Xenon adds .collapsed.
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest || !e.target.closest('a[data-toggle="sidebar"]')) return;
+    if (!window.public_vars || public_vars.$sidebarMenu.hasClass('collapsed')) return;
+    document.querySelectorAll('#main-menu > li.expanded').forEach(function (li) {
+      window.sidebar_menu_item_collapse(jQuery(li), jQuery(li).children('ul'));
+    });
+  }, true);
+
   // ---- highlight the sidebar entry of the section in view ----
   var headings = Array.prototype.map.call(document.querySelectorAll('.main-content h4.text-gray > i[id]'), function (i) {
     return { id: i.id, el: i.parentNode, link: document.querySelector('#main-menu a[href="#' + i.id + '"]') };
