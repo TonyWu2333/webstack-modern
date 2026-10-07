@@ -1,0 +1,13 @@
+{
+  "name": "webstack-nav",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WebStack 网址导航，链接写在 config.yml 里",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.3.2"
+  },
+  "license": "MIT"
+}
