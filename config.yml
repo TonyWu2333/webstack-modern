@@ -166,6 +166,10 @@ nav:
             url: https://www.producthunt.com/
             logo: producthunt.png
             desc: 每日发现全球新产品
+          - title: AIHOT
+            url: https://aihot.news/
+            logo: aihot.png
+            desc: AI行业动态聚合，每日精选与AI日报
   - name: 人工智能
     icon: fa-magic
     children:
