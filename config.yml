@@ -408,9 +408,6 @@ nav:
     children:
       - name: 游戏下载
         links:
-          - title: skidrowcodex
-            url: https://www.skidrowcodex.net/
-            logo: https://www.skidrowcodex.net/wp-content/uploads/2018/12/1.png
           - title: flysheep
             url: https://www.flysheep6.com/
             logo: https://images.weserv.nl/?url=https://r534.com/flysheep/i/2023/02/25/5fgq.jpg
