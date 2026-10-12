@@ -45,6 +45,10 @@ nav:
         url: https://me.tonywu.top/
         logo: me-tonywu.svg
         desc: 个人主页
+      - title: LINUX DO
+        url: https://linux.do/
+        logo: https://cdn3.ldstatic.com/optimized/4X/6/a/6/6a6affc7b1ce8140279e959d32671304db06d5ab_2_180x180.png
+        desc: 新的理想型社区
   - name: 计算机技术
     icon: fa-code
     children:
