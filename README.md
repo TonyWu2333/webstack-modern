@@ -66,3 +66,7 @@ Import this repo in Vercel. `vercel.json` already sets the build command (`npm r
 ## Credits
 
 Based on [WebStack](https://github.com/WebStackPage/WebStackPage.github.io) by Viggo (MIT), built on the Xenon admin template. This project is also MIT licensed.
+
+## Friends
+
+- [LINUX DO](https://linux.do/) — thanks to the LINUX DO community for the support
