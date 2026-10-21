@@ -407,6 +407,10 @@ nav:
         url: https://diakov.net/
         logo: https://diakov.net/favicon.ico
         desc: 俄国软件资源网站
+      - title: Z-Library
+        url: https://z-lib.sk/
+        logo: https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://z-lib.sk&size=64
+        desc: 电子书下载（zlib）
   - name: 游戏
     icon: fa-gamepad
     children:
