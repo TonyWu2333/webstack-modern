@@ -53,7 +53,7 @@ ${subs}
 }).join('\n');
 
 const card = (l) => `                <div class="col-sm-3">
-                    <a class="xe-widget xe-conversations box2 label-info" href="${esc(l.url)}" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${esc(l.url)}">
+                    <a class="xe-widget xe-conversations box2" href="${esc(l.url)}" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${esc(l.url)}">
                         <div class="xe-comment-entry">
                             <span class="xe-user-img">
                                 <img data-src="${esc(logoSrc(l.logo))}" class="lozad img-circle" width="40" alt="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='assets/images/logos/default.png'">
