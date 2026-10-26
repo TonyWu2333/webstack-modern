@@ -53,22 +53,22 @@ ${subs}
 }).join('\n');
 
 const card = (l) => `                <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open(${esc(JSON.stringify(l.url))}, '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${esc(l.url)}">
+                    <a class="xe-widget xe-conversations box2 label-info" href="${esc(l.url)}" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${esc(l.url)}">
                         <div class="xe-comment-entry">
-                            <a class="xe-user-img">
+                            <span class="xe-user-img">
                                 <img data-src="${esc(logoSrc(l.logo))}" class="lozad img-circle" width="40" alt="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='assets/images/logos/default.png'">
-                            </a>
+                            </span>
                             <div class="xe-comment">
-                                <a href="#" class="xe-user-name overflowClip_1">
+                                <span class="xe-user-name overflowClip_1">
                                     <strong>${esc(l.title)}</strong>
-                                </a>
+                                </span>
                                 <p class="overflowClip_2">${esc(l.desc)}</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>`;
 
-const section = (c, icon) => `            <h4 class="text-gray"><i class="${esc(icon || 'linecons-tag')}" id="${c.id}"></i>${esc(c.name)}<span class="cat-count">${(c.links || []).length}</span></h4>
+const section = (c, icon) => `            <h2 class="text-gray"><i class="${esc(icon || 'linecons-tag')}" id="${c.id}"></i>${esc(c.name)}<span class="cat-count">${(c.links || []).length}</span></h2>
             <div class="row">
 ${(c.links || []).map(card).join('\n')}
             </div>`;
@@ -81,7 +81,7 @@ const name = site.name || site.title;
 const favicon = asset(site.favicon || 'assets/images/favicon.png');
 const brand = site.logo
   ? `                        <a href="./" class="logo-expanded">
-                            <img src="${esc(asset(site.logo))}" width="100%" alt="" />
+                            <img src="${esc(asset(site.logo))}" width="100%" alt="${esc(name)}" />
                         </a>
                         <a href="./" class="logo-collapsed">
                             <img src="${esc(asset(site.logo_collapsed || site.logo))}" width="40" alt="" />
@@ -97,30 +97,68 @@ const topLinks = (site.top_links || []).map((l) => `                    <li clas
                         </a>
                     </li>`).join('\n');
 
+// canonical / og:url and WebSite + Person structured data
+const author = site.author && {
+  '@type': 'Person',
+  name: site.author.name,
+  url: site.author.url,
+  sameAs: site.author.same_as,
+};
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name,
+  url: site.url,
+  description: site.description,
+  inLanguage: 'zh-CN',
+  author,
+};
+const seo = [
+  site.url && `    <link rel="canonical" href="${esc(site.url)}">
+    <meta property="og:url" content="${esc(site.url)}">`,
+  `    <script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>`,
+].filter(Boolean).join('\n');
+
 const vars = {
   title: esc(site.title),
   keywords: esc(site.keywords),
   description: esc(site.description),
   favicon: esc(favicon),
   brand,
+  seo,
   head: site.head || '', // raw HTML, e.g. your own analytics snippet
   footer: site.footer || '', // raw HTML
   top_links: topLinks,
   menu,
   sections,
-  // cache-busting version for the skin files, so browsers pick up edits immediately
-  v: crypto.createHash('md5')
-    .update(['assets/css/modern.css', 'assets/js/modern.js'].map((f) => fs.readFileSync(path.join(root, f))).join(''))
-    .digest('hex')
-    .slice(0, 8),
 };
 
-const html = fs.readFileSync(path.join(root, 'template.html'), 'utf8').replace(/\{\{(\w+)\}\}/g, (_, k) => vars[k] ?? '');
+// append a content hash to every local asset URL, so /assets/* can be cached for a year (see vercel.json)
+const hashes = {};
+const fingerprint = (s) => s.replace(/((?:src|href|data-src)=")(assets\/[^"?#]+)"/g, (m, attr, p) => {
+  const f = path.join(root, p);
+  if (!fs.existsSync(f)) return m;
+  hashes[p] ??= crypto.createHash('md5').update(fs.readFileSync(f)).digest('hex').slice(0, 8);
+  return `${attr}${p}?v=${hashes[p]}"`;
+});
+
+const html = fingerprint(fs.readFileSync(path.join(root, 'template.html'), 'utf8').replace(/\{\{(\w+)\}\}/g, (_, k) => vars[k] ?? ''));
 
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out);
 fs.cpSync(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true });
 fs.writeFileSync(path.join(out, 'index.html'), html);
+fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\n${site.url ? `\nSitemap: ${new URL('sitemap.xml', site.url)}\n` : ''}`);
+if (site.url) {
+  fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${esc(site.url)}</loc>
+    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>
+  </url>
+</urlset>
+`);
+}
 
 const total = nav.flatMap((i) => i.children || [i]).reduce((s, c) => s + (c.links || []).length, 0);
 console.log(`✓ dist/index.html 已生成：${n} 个分类，${total} 个链接`);

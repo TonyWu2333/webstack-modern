@@ -113,6 +113,14 @@ body,
     border-bottom: 1px solid var(--side-line);
 }
 
+/* the sidebar brand doubles as the page's h1 */
+h1.logo {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
 .brand {
     display: flex;
     align-items: center;
@@ -557,7 +565,7 @@ body,
 
 /* ---------- section headings ---------- */
 
-.main-content h4.text-gray {
+.main-content h2.text-gray {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -568,7 +576,7 @@ body,
     letter-spacing: .01em;
 }
 
-.main-content h4.text-gray > i {
+.main-content h2.text-gray > i {
     display: grid;
     place-items: center;
     width: 30px;
@@ -617,6 +625,12 @@ body,
     box-shadow: var(--shadow);
     transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease, background-color .3s ease;
     isolation: isolate;
+}
+
+/* cards are real links so crawlers can follow them */
+a.xe-widget.box2 {
+    display: block;
+    color: inherit;
 }
 
 /* cursor-following spotlight */
@@ -825,7 +839,7 @@ footer.main-footer .go-up a:hover {
         display: none;
     }
 
-    .main-content h4.text-gray {
+    .main-content h2.text-gray {
         margin-top: 28px;
     }
 

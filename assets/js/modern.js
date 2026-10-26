@@ -19,7 +19,7 @@
 
   // ---- staggered entrance for headings and cards ----
   var items = [];
-  document.querySelectorAll('.main-content h4.text-gray').forEach(function (h) { items.push(h); });
+  document.querySelectorAll('.main-content h2.text-gray').forEach(function (h) { items.push(h); });
   document.querySelectorAll('.main-content .row').forEach(function (row) {
     Array.prototype.forEach.call(row.children, function (col, i) {
       col.style.setProperty('--d', (i % 4) * 60 + 'ms');
@@ -115,7 +115,7 @@
   }, true);
 
   // ---- highlight the sidebar entry of the section in view ----
-  var headings = Array.prototype.map.call(document.querySelectorAll('.main-content h4.text-gray > i[id]'), function (i) {
+  var headings = Array.prototype.map.call(document.querySelectorAll('.main-content h2.text-gray > i[id]'), function (i) {
     return { id: i.id, el: i.parentNode, link: document.querySelector('#main-menu a[href="#' + i.id + '"]') };
   });
   var current = null;
