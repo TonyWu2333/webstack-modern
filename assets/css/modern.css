@@ -628,9 +628,11 @@ h1.logo {
 }
 
 /* cards are real links so crawlers can follow them */
-a.xe-widget.box2 {
+a.xe-widget.box2,
+a.xe-widget.box2:focus {
     display: block;
     color: inherit;
+    text-decoration: none;
 }
 
 /* cursor-following spotlight */
