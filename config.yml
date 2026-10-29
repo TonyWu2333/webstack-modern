@@ -425,6 +425,10 @@ nav:
     children:
       - name: 游戏下载
         links:
+          - title: skidrowreloaded
+            url: https://www.skidrowreloaded.com/
+            logo: https://www.skidrowreloaded.com/wp-content/uploads/2018/06/cropped-faviicon-32x32.png
+            desc: 游戏资源下载
           - title: flysheep
             url: https://www.flysheep6.com/
             logo: https://images.weserv.nl/?url=https://r534.com/flysheep/i/2023/02/25/5fgq.jpg
